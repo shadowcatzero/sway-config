@@ -1,0 +1,79 @@
+# vim: filetype=i3config
+
+
+
+### Variables:
+
+set $mod Mod4
+set $left n
+set $down e
+set $up i
+set $right o
+include programs
+
+for_window [app_id="term-popup"] {
+    floating enable
+}
+
+include containers
+
+
+
+### Programs:
+
+bindsym $mod+x kill
+bindsym $mod+2 exec swaymsg exit
+bindsym $mod+1 reload
+
+bindsym $mod+return exec $term
+bindsym $mod+d exec $menu
+bindsym Print exec $screenshot
+bindsym $mod+c exec $calc
+bindsym $mod+k exec $note
+bindsym $mod+v exec $volume
+
+floating_modifier $mod normal
+
+
+
+# Layout:
+
+bindsym $mod+quotedbl splith
+bindsym $mod+apostrophe splitv
+
+bindsym $mod+period layout tabbed
+bindsym $mod+comma layout stacking
+bindsym $mod+slash layout toggle split
+
+bindsym $mod+semicolon fullscreen
+
+bindsym $mod+shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+
+bindsym $mod+j focus parent
+bindsym $mod+shift+j focus child
+
+bindsym $mod+minus gaps inner current minus 5
+bindsym $mod+equal gaps inner current plus 5
+
+bindsym $mod+shift+minus move scratchpad
+bindsym $mod+shift+equal scratchpad show
+
+
+
+# F keys:
+
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 10
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 10
+bindsym shift+XF86MonBrightnessUp exec --no-startup-id light -S 100
+bindsym shift+XF86MonBrightnessDown exec --no-startup-id light -S 1
+
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_SINK@ toggle; exec pkill -RTMIN+8 waybar
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_SINK@ 5%+; exec pkill -RTMIN+8 waybar
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_SINK@ 5%-; exec pkill -RTMIN+8 waybar
+bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+

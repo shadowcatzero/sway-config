@@ -1,0 +1,17 @@
+# vim: filetype=i3config
+
+# Read `man 5 sway` for a complete reference.
+# TODO: move this entire thing into a script file that sets variables and then compiles into this
+
+include devices
+include mappings
+include theme
+
+include /etc/sway/config.d/*
+
+exec wayland-init
+
+for_window [app_id="flameshot"] floating enable, fullscreen disable, move absolute position 0 0, border pixel 0
+
+for_window [title="Firefox — Sharing Indicator"] floating enable, move position 1820 0
+

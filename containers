@@ -1,0 +1,69 @@
+# vim: filetype=i3config
+
+# Moving around:
+
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+left focus left
+bindsym $mod+down focus down
+bindsym $mod+up focus up
+bindsym $mod+right focus right
+
+bindsym $mod+shift+$left move left
+bindsym $mod+shift+$down move down
+bindsym $mod+shift+$up move up
+bindsym $mod+shift+$right move right
+bindsym $mod+shift+left move left
+bindsym $mod+shift+down move down
+bindsym $mod+shift+up move up
+bindsym $mod+shift+right move right
+
+
+
+# Workspaces:
+
+bindsym $mod+a workspace a
+bindsym $mod+r workspace r
+bindsym $mod+s workspace s
+bindsym $mod+t workspace t
+bindsym $mod+q workspace q
+bindsym $mod+w workspace w
+bindsym $mod+f workspace f
+bindsym $mod+p workspace p
+
+bindsym $mod+shift+a move container to workspace a
+bindsym $mod+shift+r move container to workspace r
+bindsym $mod+shift+s move container to workspace s
+bindsym $mod+shift+t move container to workspace t
+bindsym $mod+shift+q move container to workspace q
+bindsym $mod+shift+w move container to workspace w
+bindsym $mod+shift+f move container to workspace f
+bindsym $mod+shift+p move container to workspace p
+
+
+bindsym $mod+control+shift+$left  move workspace to output left
+bindsym $mod+control+shift+$right move workspace to output right
+bindsym $mod+control+shift+$up    move workspace to output up
+bindsym $mod+control+shift+$down  move workspace to output down
+
+
+
+# Resizing containers:
+
+mode "resize" {
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    bindsym return mode "default"
+    bindsym escape mode "default"
+}
+
+bindsym $mod+alt+$left resize shrink width 10px
+bindsym $mod+alt+$down resize grow height 10px
+bindsym $mod+alt+$up resize shrink height 10px
+bindsym $mod+alt+$right resize grow width 10px
+

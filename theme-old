@@ -1,0 +1,39 @@
+# vim: filetype=i3config
+
+output * bg ~/pictures/wallpaper/pink\ flowers.jpg fill
+default_border pixel 2
+gaps inner 15
+
+set $fg #cccccc
+set $bg #373b41
+set $primary #e0aaee
+set $primary2 #7777aa
+set $unfocused #888888
+set $unfocused_bg #282A2Edd
+set $urgent #ffaaaa
+set $urgent_bg #90500088
+
+client.focused          $primary $bg $fg $primary $primary
+client.focused_inactive $primary2 $bg $fg $primary $primary2
+client.unfocused        $bg $unfocused_bg $unfocused $bg $bg
+client.urgent           $urgent $urgent_bg $fg $primary $urgent
+client.placeholder      #000000 #0c0c0c $fg #000000 #0c0c0c
+
+#bar {
+#    font pango:Monospace 14
+#    position top
+#    status_command i3status-rs
+#    gaps 5 5 0 5
+#    colors {
+#        separator #666666
+#        background #282A2Edd
+#        statusline #dddddd
+#        focused_workspace  $bg $bg $primary
+#        active_workspace   $bg $bg $fg
+#        inactive_workspace #282A2Edd #282A2Edd #707880
+#        urgent_workspace   $bg $urgent_bg $fg
+#    }
+#}
+
+bar swaybar_command waybar
+

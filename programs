@@ -1,0 +1,10 @@
+# vim: filetype=i3config
+
+set $term kitty
+set $menu "rofi -show drun -show-icons"
+set $screenshot grim -g "$(slurp -d)" - | swappy -f -
+set $popup kitty --class "term-popup" -c="$XDG_CONFIG_HOME/kitty/popup.conf"
+set $calc $popup qalc
+set $note $popup note
+set $volume $popup pulsemixer
+

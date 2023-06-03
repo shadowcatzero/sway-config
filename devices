@@ -1,0 +1,41 @@
+# vim: filetype=i3config
+
+#exec swayidle -w \
+#        timeout 300 'swaylock -f -c 000000' \
+#        timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#        before-sleep 'swaylock -f -c 000000'
+
+input "type:touchpad" {
+    tap enabled
+    accel_profile flat
+    pointer_accel 0.7
+    dwt false
+}
+
+input "type:keyboard" {
+    xkb_layout "us"
+    xkb_variant "colemak_dh"
+    xkb_options "caps:escape"
+    repeat_delay 300
+    repeat_delay 300
+    repeat_rate 50
+}
+
+input "1133:16394:Logitech_M325" {
+    accel_profile flat
+    pointer_accel -0.4
+}
+
+input "1133:49738:Logitech_Gaming_Mouse_G600" {
+    accel_profile flat
+    pointer_accel 0.2
+}
+
+input 1386:888:Wacom_Intuos_BT_M_Pen events disabled
+input 1386:888:Wacom_Intuos_BT_M_Pad events disabled
+
+input 1386:967:Wacom_Intuos_BT_M_Pen events disabled
+input 1386:967:Wacom_Intuos_BT_M_Pad events disabled
+
+exec_always "pkill kanshi; kanshi"
+
